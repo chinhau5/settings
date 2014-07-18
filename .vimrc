@@ -11,6 +11,7 @@ set ruler
 set showmatch
 set t_Co=256
 set background=dark
+set cul
 colorscheme zenburn 
 filetype plugin indent on
 syntax enable 
@@ -47,5 +48,7 @@ nmap \q :nohlsearch <CR>
 nmap \h :cs find c <cword> <CR>
 nnoremap % v%
 nnoremap * :let @/='\<<C-R>=expand("<cword>")<CR>\>'<CR>:set hls<CR>
-vmap \\ :s/\(.*\)/\/*\1*\//g <CR>
-vmap \| :s/\/\*\(.*\)\*\//\1/ <CR>
+"vmap \\ :s/\(.*\)/\/*\1*\//g <CR>
+"vmap \| :s/\/\*\(.*\)\*\//\1/ <CR>
+vmap \\ :s/\(.*\)/#\1/g <CR>
+vmap \| :s/#\(.*\)/\1/ <CR>
